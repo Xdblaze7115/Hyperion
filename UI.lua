@@ -14,8 +14,8 @@ local Window = Rayfield:CreateWindow({
 
    ConfigurationSaving = {
       Enabled = true,
-      FolderName = true,
-      FileName = "Hyperion"
+      FolderName = "Hyperion",
+      FileName = "Settings"
    },
 
    Discord = {
