@@ -2,7 +2,7 @@ local coreGui = game:GetService("CoreGui")
 
 local camera = workspace.CurrentCamera
 local drawingUI = Instance.new("ScreenGui")
-drawingUI.Name = "Drawing | Xeno"
+drawingUI.Name = "Drawing"
 drawingUI.IgnoreGuiInset = true
 drawingUI.DisplayOrder = 0x7fffffff
 drawingUI.Parent = coreGui
@@ -38,14 +38,14 @@ local baseDrawingObj = setmetatable({
 		if self[index] ~= nil then
 			self[index] = value
 		else
-			warn("Attempted to set invalid property: " .. tostring(index))
+			warn("Attempted To Set Invalid Property: " .. tostring(index))
 		end
 	end,
 	GetProperty = function(self, index)
 		if self[index] ~= nil then
 			return self[index]
 		else
-			warn("Attempted to get invalid property: " .. tostring(index))
+			warn("Attempted To Get Invalid Property: " .. tostring(index))
 			return nil
 		end
 	end,
@@ -100,7 +100,7 @@ function DrawingLib.new(drawingType)
 	elseif drawingType == "TextBox" then
 		return DrawingLib.createTextBox()
 	else
-		error("Invalid drawing type: " .. tostring(drawingType))
+		error("Invalid Drawing Type: " .. tostring(drawingType))
 	end
 end
 
@@ -120,7 +120,7 @@ function DrawingLib.createLine()
 	return setmetatable({Parent = drawingUI}, {
 		__newindex = function(_, index, value)
 			if lineObj[index] == nil then 
-				warn("Invalid property: " .. tostring(index))
+				warn("Invalid Property: " .. tostring(index))
 				return 
 			end
 
